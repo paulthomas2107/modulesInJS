@@ -1,0 +1,18 @@
+import { sum, sub } from './calc.js'; // need JS in plain JS add module to def
+import { div, mult, sum as newSum } from './calcNew.js'; // inc alias for add
+import squareAndAdd from './calcDefault.js'; // when you have only ONE thing to export no need for braces
+import { default as newName } from './calcDefault.js'; // Rename function imported - can be anything
+import thisWorksToo from './calcDefault.js'; // As above
+import * as multiStuff from './multiCalc.js';
+
+console.log('Learning Modules');
+
+console.log(sum(10, 20), sub(20, 18));
+console.log(div(10, 20), mult(20, 18));
+console.log(squareAndAdd(10, 20));
+console.log(newName(100, 200));
+console.log(thisWorksToo(200, 300));
+console.log(newSum(12.1, 34.12));
+console.log(multiStuff.m1(1, 2, 3));
+console.log(multiStuff.m2(3, 4, 5, 6));
+console.log(multiStuff.m3(10, 20, 30, 2));
