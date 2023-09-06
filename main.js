@@ -20,3 +20,25 @@ console.log(multiStuff.m3(10, 20, 30, 2));
 console.log(combine.channelName());
 console.log(combine.multiCalc.add1(1, 99));
 console.log(combine.multiCalc.sub1(1, 99));
+
+// Dynamic import with Promise
+const country = 'ES';
+if (country === 'UK') {
+  const { sayHi } = await import('./greeting.js'); // Promise
+  console.log(sayHi());
+} else if (country === 'ES') {
+  const { sayHola } = await import('./greeting.js'); // Promise
+  console.log(sayHola());
+}
+
+// More Promise
+const promises = Promise.all([
+  await import('./greeting.js'),
+  await import('./calc.js'),
+]);
+
+promises.then((result) => {
+  console.log(result[0].sayHi());
+  console.log(result[0].sayHola());
+  console.log(result[1].sum(1, 2));
+});
