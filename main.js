@@ -3,7 +3,8 @@ import { div, mult, sum as newSum } from './calcNew.js'; // inc alias for add
 import squareAndAdd from './calcDefault.js'; // when you have only ONE thing to export no need for braces
 import { default as newName } from './calcDefault.js'; // Rename function imported - can be anything
 import thisWorksToo from './calcDefault.js'; // As above
-import * as multiStuff from './multiCalc.js';
+import * as multiStuff from './multiCalc.js'; // No need to individuallty import each function - use *
+import * as combine from './combineExample.js';
 
 console.log('Learning Modules');
 
@@ -16,3 +17,6 @@ console.log(newSum(12.1, 34.12));
 console.log(multiStuff.m1(1, 2, 3));
 console.log(multiStuff.m2(3, 4, 5, 6));
 console.log(multiStuff.m3(10, 20, 30, 2));
+console.log(combine.channelName());
+console.log(combine.multiCalc.add1(1, 99));
+console.log(combine.multiCalc.sub1(1, 99));
